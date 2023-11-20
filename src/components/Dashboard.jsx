@@ -1,6 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
-function Dashboard() {
+const Dashboard = ({stocks}) => {
   return (
     <div>
       <h2>All stocks</h2>
@@ -9,8 +10,8 @@ function Dashboard() {
           <li key={stock.symbol}>
             <Link to={`/stocks/${stock.symbol}`}>{stock.name}</Link>
           </li>
-        ))}
-      </ul>
+          ))}
+        </ul>
     </div>
   );
 }
