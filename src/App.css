@@ -9,7 +9,8 @@
   width: 100vw;
   height: 50px;
   padding: 0 20px;
-  background: #6532CB;
+  background: rgb(219, 37, 143);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .nav > * {

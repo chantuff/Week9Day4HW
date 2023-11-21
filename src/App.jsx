@@ -1,21 +1,23 @@
-import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Home from './components/Home';
-import About from './components/About';
-import Dashboard from './components/Dashboard';
-import Stock from './components/Stock';
-import stocks from './components/data.json';
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Dashboard from "./pages/Dashboard";
+import Stock from "./pages/Stock";
+import Nav from "./components/Nav";
+import "./App.css";
 
-const App = () => {
+function App() {
   return (
-    <Router>
-    <NavBar />
-    <Route path="/" exact component={Home} />
-    <Route path="/about" component={About} />
-    <Route path="/stocks/:symbol" render={(props) => <Stock {...props} stocks={stocks} />} />
-    <Route path="/stocks" render={() => <Dashboard stocks={stocks} />} />
-  </Router>
+    <div>
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/stocks" element={<Dashboard />} />
+        <Route path="/stocks/:symbol" element={<Stock />} />
+      </Routes>
+    </div>
   );
-};
+}
 
 export default App;
